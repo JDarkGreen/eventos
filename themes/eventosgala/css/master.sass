@@ -1,0 +1,354 @@
+@import "compass/css3"
+
+//Importar Fuentes
+
+
+
+/***************************************************************************************/
+/**-------------------------- VARIABLES ---------------------------------------------**/
+/***************************************************************************************/
+
+//Color 
+$gala_morado_claro      : #D4BFE9
+$gala_morado_oscuro     : #7752A4
+$gala_morado_oscuro_dark: #614587
+$gala_morado            : #AE37A9
+
+$gala_gray              : #5F5F5F
+
+
+/***************************************************************************************/
+/**-------------------------- RESET --------------------------------------------------**/
+/***************************************************************************************/
+
+body,html
+	font-size: 16px
+	width    : 100% 
+
+figure 
+	margin: 0
+
+/***************************************************************************************/
+/**-------------------------- KEYFRAMES  ---------------------------------------------**/
+/***************************************************************************************/
+
+//PULSE
++keyframes( pulse )
+	0%, 100%
+		+translateX( -5px )
+	50%
+		+translateX( 0 )
+
+//EXPAND
++keyframes( expand )
+	0%, 100%
+		+scale( 1.3 )
+	50%
+		+scale( 1.0 )
+
+//CONTRACT
++keyframes( contract )
+	0%
+		+scale( 0 )
+	100%
+		+scale( 1 )
+
+//LEFT TO RIGHT
++keyframes( left-to-right )
+	0%
+		+transform( translateZ( 300px ) translateX( -10% ) )	
+	100% 
+		+transform( translateZ( 300px ) translateX( 0% ) )
+
+
+/***************************************************************************************/
+/**-------------------------- ANIMACIONES CON CLASES ----------------------------------**/
+/***************************************************************************************/
+
+.box-expand
+	animation: expand 20s ease 
+.box-left-to-right
+	animation: left-to-right 10s ease
+
+
+/***************************************************************************************/
+/**-- SECCIONES - PAGINAS EN COMUN  --------------------------------------------------**/
+/***************************************************************************************/
+/*POSICIONES */
+.relative
+	position: relative
+
+//Contenedor con display flex
+.container-flex
+	display        : flex
+	flex-wrap      : wrap 
+	justify-content: center
+
+//Alinear contenidos
+.align-content
+	align-content: center
+	align-items  : center 
+
+//Flechas de Slider en común
+.arrow__common-slider
+	font-size      : 34px
+	margin         : -22px auto 0
+	position       : absolute
+	text-decoration: none
+	top            : 50%
+	z-index        : 999
+//Variaciones
+.arrow__common-slider--prev
+	left: -40px
+.arrow__common-slider--next
+	right: -40px
+
+
+//+Redes Sociales - ul
+.social-links
+	display        : inline-block
+	list-style-type: none 
+	margin         : 0 auto
+	padding        : 0 
+	li 
+		display: inline-block
+		padding: 0 8px
+		a 
+			color    : $gala_morado_oscuro
+			display  : block
+			font-size: 20px
+			//Hover
+			&:hover 
+				animation: expand 800ms ease infinite 
+
+//+Banners
+//++Banner Común
+.sectionCommon__banner
+	align-items    : center 
+	border         : 1px solid $gala_gray
+	display        : flex 
+	justify-content: space-between
+	margin         : 57px auto 0
+	//Imagen
+	figure 
+		margin   : 0 
+		max-width: 476px
+//++Baner Comun contenedor
+.sectionCommon__banner__content
+	margin: 0 45px
+	//Título
+	h2
+		color: $gala_morado_oscuro
+	//Subtítulo
+	h3
+		font-size  : 25px 
+		font-weight: 600
+
+//++Banner Solo de SERVICIOS
+.sectionCommon__banner__services
+	background: $gala_morado_oscuro
+	color     : white 
+	padding   : 22px 0
+	//Titulo
+	h2
+		margin: 0 30px 0 0
+	//Imagen
+	figure 
+		margin: 0 30px
+
+//+BOTONES
+//++ Botón Ver Más
+.btnCommon__show-more
+	+border-radius(5px)
+	+transition( all 500ms ease-in )
+	background : $gala_morado
+	border     : 1px solid transparent 
+	color      : white
+	display    : inline-block
+	font-size  : 15px
+	font-weight: 600
+	padding    : 14px 40px
+	&:hover , &:focus
+		color          : white 
+		text-decoration: none 
+	&:hover 
+		+rotateX( 360deg )
+		background: white 
+		border    : 1px solid $gala_morado
+		color     : $gala_morado 
+
+//++Variacion Mas pequeño
+.btnCommon__show-more--small
+	+border-radius( 10px )
+	padding: 5px 40px
+
+
+
+/***************************************************************************************/
+/**--  HEADER   ----------------------------------------------------------------------**/
+/***************************************************************************************/
+
+//Sección Principal
+
+//Sección Información
+.mainHeader__info
+	background: $gala_morado_claro
+	padding   : 4px 0 
+	//Párrafo
+	p 
+		color      :  $gala_morado_oscuro
+		font-weight: 600
+		margin     : 0
+
+//MAIN NAVIGATION CONTAINER
+.mainNavigation
+	border-bottom: 3px solid $gala_morado_claro
+.mainNavigation__content
+	display        : flex 
+	justify-content: space-between
+	padding        : 30px 0 7px
+
+	//Logo Principal
+	.logo
+		margin: -60px auto 0
+
+	//Lista
+	ul.main-menu
+		display        : inline-block
+		list-style-type: none		
+		margin         : 0 auto
+		padding        : 0
+		li 
+			display: inline-block
+			padding: 0 22px
+			a 
+				color          : gray
+				font-weight    : 600 
+				text-decoration: none
+				+transition( all 500ms ease-in )
+			//Activo u hover
+			&.current-menu-item,&.current_page_item, &:hover  
+				a 
+					color: $gala_morado_oscuro
+
+/***************************************************************************************/
+/**--  SLIDEBAR CONTENEDOR -----------------------------------------------------------**/
+/***************************************************************************************/
+
+/***************************************************************************************/
+/**--  WRAPPER GENERAL ---------------------------------------------------------------**/
+/***************************************************************************************/
+
+/***************************************************************************************/
+/**--  PAGINA INICIO  ----------------------------------------------------------------**/
+/***************************************************************************************/
+
+//+ Slider INICIO
+.pageInicio__slider
+	//Indicadores de Carousel
+	.carousel-indicators
+		bottom: 8px
+		left  : 40%		
+		margin: 0
+		li 
+			+transition( all 500ms ease ) 
+			background: white
+			border    : 0
+			height    : 16px
+			margin    : 0
+			width     : 16px 
+			//active u hover
+			&.active , &:hover 
+				background: $gala_morado
+
+	//Contenedor de Información
+	.carousel-inner 
+		.carousel-item 
+			//Informacion
+			.carousel-caption
+				background: rgba( 119, 82 , 164 ,.8 )
+				bottom    : 0
+				left      : 0
+				padding   : 24px 0 5px 
+				right     : 0
+				/* Título */
+				h3 
+					font-size: 23px 
+					margin   : 0 
+
+//+ Sección Miscelaneo
+.pageInicio__miscelaneo
+	margin: 70px auto 50px
+	//++ Artículos Galería
+	.item-gallery
+		+box-shadow( 2px 2px 4px )
+		border-bottom: 2px solid white
+		border-right : 2px solid white
+		margin       : 0 10px 18px
+		overflow     : hidden
+		width        : 30%
+		img 
+			+transition( all 500ms ease )
+			+transform( scale(1) translateZ(0) )
+			backface-visibility: hidden
+		//Hover 
+		&:hover 
+			img 
+				+scale( 1.2 )
+
+//+ Sección Promociones
+.pageInicio__promocion
+	border: 1px solid $gala_gray
+	margin: 43px auto 0
+	//Contenido Sección Promocion
+	.content-promocion
+		left    : 40px 
+		position: absolute
+		top     : 53px
+
+
+
+/***************************************************************************************/
+/**--  PÁGINA NOSOTROS  --------------------------------------------------------------**/
+/***************************************************************************************/
+
+/***************************************************************************************/
+/**--  PÁGINA SERVICIOS --------------------------------------------------------------**/
+/***************************************************************************************/
+ 
+/***************************************************************************************/
+/**--  PÁGINA PORTAFOLIO -------------------------------------------------------------**/
+/***************************************************************************************/
+
+/***************************************************************************************/
+/**--  PÁGINA MEDIA  -----------------------------------------------------------------**/
+/***************************************************************************************/
+
+/***************************************************************************************/
+/**--  PÁGINA BLOG -------------------------------------------------------------------**/
+/***************************************************************************************/
+
+/************************************************************************************/
+/**--  PÁGINA PREGUNTAS -----------------------------------------------------------**/
+/************************************************************************************/
+
+/***************************************************************************************/
+/**--  PÁGINA CONTACTO ---------------------------------------------------------------**/
+/***************************************************************************************/
+
+
+/***************************************************************************************/
+/**--  MAIN FOOTER  ------------------------------------------------------------------**/
+/***************************************************************************************/
+
+.mainFooter
+	background: url("../images/footer/inicio_fondo_inferior_footer.jpg") no-repeat
+	margin    : 25px auto 0
+
+/************************************************************************************/
+/*-- MEDIA QUERIES -----------------------------------------------------------------*/
+/************************************************************************************/
+
+//480px
+@media ( max-width: 568px )
+
