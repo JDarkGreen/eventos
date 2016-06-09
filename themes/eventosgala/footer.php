@@ -5,7 +5,7 @@
 	<!-- Footer -->
 	<footer class="mainFooter">
 		<div class="container">
-			<div class="row container-flex align-content">
+			<div class="row">
 
 				<!-- Logo -->
 				<div class="col-xs-3">
@@ -21,8 +21,14 @@
 				</div> <!-- /.col-xs-3 -->
 
 				<!-- Información -->
-				<div class="col-xs-3">
-					
+				<div class="col-xs-3 text-justify">
+					<!-- Extrar la data de la opcion text nosotros -->
+					<?php 
+						if( isset($options['widget_nosotros']) && !empty($options['widget_nosotros']) ) :  echo apply_filters('the_content' , $options['widget_nosotros'] );
+						else: 
+							echo apply_filters('the_content' , "Actualizando Contenido." );
+						endif;
+					?>
 				</div> <!-- /.col-xs-3 -->
 				
 				<!-- Nuestros Servicios -->
