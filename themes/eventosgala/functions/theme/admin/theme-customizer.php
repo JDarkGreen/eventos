@@ -258,31 +258,18 @@ function theme_customize_register($wp_customize) {
 		'priority' => 40
 	));
 	
-	/* Surco */
-	$wp_customize->add_setting('theme_custom_settings[contact_address_surco]', array(
+	/* Direccion */
+	$wp_customize->add_setting('theme_custom_settings[contact_address]', array(
 		'default' => '',
 		'type' => 'option'
 	));
 	
-	$wp_customize->add_control('theme_custom_settings[contact_address_surco]', array(
-		'label'    => __('Escribe la Direccion del contacto Surco', LANG),
+	$wp_customize->add_control('theme_custom_settings[contact_address]', array(
+		'label'    => __('Escribe la dirección del Contacto', LANG),
 		'section'  => 'theme_contact_address',
-		'settings' => 'theme_custom_settings[contact_address_surco]',
+		'settings' => 'theme_custom_settings[contact_address]',
 		'type'     => 'textarea'
 	));	
-
-	/* Centrolima */
-	$wp_customize->add_setting('theme_custom_settings[contact_address_centrolima]', array(
-		'default' => '',
-		'type' => 'option'
-	));
-	
-	$wp_customize->add_control('theme_custom_settings[contact_address_centrolima]', array(
-		'label'    => __('Escribe la Direccion del contacto Centrolima', LANG),
-		'section'  => 'theme_contact_address',
-		'settings' => 'theme_custom_settings[contact_address_centrolima]',
-		'type'     => 'textarea'
-	));
 
 	//Customizar MAPA
 	$wp_customize->add_section('theme_contact_mapa', array(
@@ -367,6 +354,19 @@ function theme_customize_register($wp_customize) {
 		'settings' => 'theme_custom_settings[widget_footer]',
 		'type'     => 'textarea'
 	));
+
+	/* THEMA SERVICIOS - Customizar Información Servicios */
+	$wp_customize->add_setting('theme_custom_settings[widget_footer_service]', array(
+		'default' => '',
+		'type' => 'option'
+	));
+	
+	$wp_customize->add_control('theme_custom_settings[widget_footer_service]', array(
+		'label'    => __('Escribe Servicios en sección FOOTER', LANG),
+		'section'  => 'theme_widget_footer',
+		'settings' => 'theme_custom_settings[widget_footer_service]',
+		'type'     => 'textarea'
+	));	
 
 	//Customizar Cuentas Bancarias
 	$wp_customize->add_section('theme_bank', array(

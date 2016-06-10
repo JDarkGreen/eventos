@@ -15,6 +15,7 @@ $gala_morado_oscuro_dark: #614587
 $gala_morado            : #AE37A9
 
 $gala_gray              : #5F5F5F
+$gala_gray_claro        : #CDCDCD
 
 
 /***************************************************************************************/
@@ -103,7 +104,6 @@ figure
 .arrow__common-slider--next
 	right: -40px
 
-
 //+Redes Sociales - ul
 .social-links
 	display        : inline-block
@@ -120,6 +120,11 @@ figure
 			//Hover
 			&:hover 
 				animation: expand 800ms ease infinite 
+//++Variacion de redes sociales a blanco
+.social-links--white
+	li 
+		a 
+			color: white
 
 //+Banners
 //++Banner Común
@@ -182,7 +187,42 @@ figure
 	+border-radius( 10px )
 	padding: 5px 40px
 
+//+TITULOS
+//++ Título de Secciones Común
+.pageCommon__section-subtitle
+	font-size: 25px
+	margin   : 0 auto 30px 
 
+//+TEXTOS IMPORTANTE
+//++ Textos web
+.text-web
+	color  : white 
+	display: inline-block
+	span 
+		font-size : 20px
+	//Hover and focus
+	&:hover , &:focus
+		color          : white  
+		text-decoration: none
+	&:hover 
+		+animation( expand 900ms ease infinite )
+
+//BOTÓN HACIA ARRIBA 
+#arrow-up-page
+	+transition( all 500ms ease )
+	background: $gala_gray_claro 
+	color     : $gala_morado_oscuro
+	display   : none 
+	font-size : 18px
+	padding   : 6px 13px
+	position  : fixed
+	right     : 3%
+	top       : 86%
+	z-index   : 999999
+	/* Hover */
+	&:hover 
+		background: $gala_morado_oscuro
+		color     : $gala_gray_claro 
 
 /***************************************************************************************/
 /**--  HEADER   ----------------------------------------------------------------------**/
@@ -202,6 +242,8 @@ figure
 
 //MAIN NAVIGATION CONTAINER
 .mainNavigation
+	+transition( all 500ms ease )
+	background   : white 
 	border-bottom: 3px solid $gala_morado_claro
 .mainNavigation__content
 	display        : flex 
@@ -230,6 +272,23 @@ figure
 			&.current-menu-item,&.current_page_item, &:hover  
 				a 
 					color: $gala_morado_oscuro
+
+//VARIACION POSICION FIJA - MAIN NAVIGATION
+.mainNavigation--fixed 
+	background: $gala_morado_oscuro
+	left      : 0 
+	position  : fixed 
+	right     : 0
+	z-index   : 999
+	//menu
+	ul.main-menu 
+		li 
+			a 
+				color: white
+			//Activo u hover
+			&.current-menu-item,&.current_page_item, &:hover  
+				a 
+					color: $gala_morado_claro
 
 /***************************************************************************************/
 /**--  SLIDEBAR CONTENEDOR -----------------------------------------------------------**/
@@ -307,7 +366,6 @@ figure
 		top     : 53px
 
 
-
 /***************************************************************************************/
 /**--  PÁGINA NOSOTROS  --------------------------------------------------------------**/
 /***************************************************************************************/
@@ -350,6 +408,29 @@ figure
 	//Parrafos 
 	p 
 		font-size: 13px
+
+//Lista de Contactos
+.mainFooter__list-data
+	list-style-type: none
+	padding        : 0 0 0 30px
+	li 
+		font-size: 14px
+		margin   : 0 auto 8px 
+		//Iconos
+		i
+			margin        : 0 10px 0 -29px
+			text-align    : center 
+			vertical-align: middle
+			width         : 15px
+
+//+Sección de Desarrollador
+.mainFooter__developer
+	border-top: 1px solid white 
+	margin    : 20px auto 0
+	padding   : 12px 0 0 0
+	//links
+	a 
+		color: white
 
 /************************************************************************************/
 /*-- MEDIA QUERIES -----------------------------------------------------------------*/

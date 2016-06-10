@@ -3,7 +3,19 @@ var j = jQuery.noConflict();
 
 (function($){
 /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
 	j(document).on('ready',function(){
+
+		/* Flecha Navegar Hacia arriba de la página */
+		/* Si existe la flecha hacia arriba */
+		if( j("#arrow-up-page").length ){
+			j("#arrow-up-page").on('click',function(e){
+				e.preventDefault(); /* Detener evento por defecto */
+				j('html,body').animate({
+					scrollTop: 0
+				}, 900 );
+			});	
+		}
 
 		/*|----------------------------------------------------------------------|*/
 		/*|-----  SLIDEBAR VERSION MOBILE  -----|*/
@@ -254,7 +266,8 @@ var j = jQuery.noConflict();
 		{
 			j("#form__suscribirse").on('submit',function(e){
 				e.preventDefault(); //prevenir evento default
-j.post( url + '/email/enviar.php', 
+		
+		j.post( url + '/email/enviar.php', 
 			{ 
 				nombre : j("#input_name").val(),
 				email  : j("#input_email").val(),
@@ -269,7 +282,35 @@ j.post( url + '/email/enviar.php',
 			});
 		}
 
+	});
+
+	/* ------------ Eventos Scroll ------------------------ */
+	j(window).on('scroll',function(){
+
+		/* Si existe la flecha hacia arriba */
+		if( j("#arrow-up-page").length ){
+			//Si el scroll del navegador es mayor que la posicion de 300 pixeles
+			if( j('body').scrollTop() > 300 ){
+				//Mostrar flecha de dirección hacia arriba
+				j("#arrow-up-page").fadeIn('slow');
+			}else{ 
+				/* Si no Ocultar esta flecha */ j("#arrow-up-page").fadeOut('slow');
+			}
+		}
+
+		/* NAVEGACIÓN PRINCIPAL */
+		if( j(".mainNavigation").length ){
+			//Si el scroll del navegador es mayor que la posicion de 7 pixeles
+			if( j('body').scrollTop() > 7 ){
+				//
+				j(".mainNavigation").addClass('mainNavigation--fixed');
+			}else{ 
+				/* Si no  */ j(".mainNavigation").removeClass('mainNavigation--fixed');
+			}
+
+		}
 
 	});
+
 /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 })(jQuery);
