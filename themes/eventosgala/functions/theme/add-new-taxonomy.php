@@ -57,55 +57,31 @@ function create_category_taxonomy() {
     'rewrite'          => array( 'slug' => 'cliente-category' ),
   ));
 
-  /* categorias portafolio */
+  /* categorias Imagenes */
   $labels3 = array(
-    'name'             => __( 'Categoría Portafolio'),
-    'singular_name'    => __( 'Categoría Portafolio'),
-    'search_items'     => __( 'Buscar Categoría Portafolio'),
-    'all_items'        => __( 'Todas Categorías del Portafolio' ),
-    'parent_item'      => __( 'Categoría padre del Portafolio' ),
+    'name'             => __( 'Categoría Imagen'),
+    'singular_name'    => __( 'Categoría Imagen'),
+    'search_items'     => __( 'Buscar Categoría Imagen'),
+    'all_items'        => __( 'Todas Categorías de la Imagen' ),
+    'parent_item'      => __( 'Categoría padre de la Imagen' ),
     'parent_item_colon'=> __( 'Categoría padre:' ),
-    'edit_item'        => __( 'Editar categoría de Portafolio' ), 
-    'update_item'      => __( 'Actualizar categoría de Portafolio' ),
-    'add_new_item'     => __( 'Agregar nueva categoría de Portafolio' ),
-    'new_item_name'    => __( 'Nuevo nombre categoría de Portafolio' ),
-    'menu_name'        => __( 'Categoria Portafolio' ),
+    'edit_item'        => __( 'Editar categoría de la Imagen' ), 
+    'update_item'      => __( 'Actualizar categoría de la Imagen' ),
+    'add_new_item'     => __( 'Agregar nueva categoría de la Imagen' ),
+    'new_item_name'    => __( 'Nuevo nombre categoría de la Imagen' ),
+    'menu_name'        => __( 'Categoria Imagen' ),
   ); 
 
   // Now register the taxonomy
-  register_taxonomy('portafolio_category',array('proyecto'), array(
+  register_taxonomy('image_category',array('galery-images'), array(
     'hierarchical'     => true,
     'labels'           => $labels3,
     'show_ui'          => true,
     'show_admin_column'=> true,
     'query_var'        => true,
-    'rewrite'          => array( 'slug' => 'portafolio-category' ),
+    'rewrite'          => array( 'slug' => 'image-category' ),
   ));  
 
-  /* categorias preguntas */
-  $labels4 = array(
-    'name'             => __( 'Categoría Preguntas'),
-    'singular_name'    => __( 'Categoría Preguntas'),
-    'search_items'     => __( 'Buscar Categoría Preguntas'),
-    'all_items'        => __( 'Todas Categorías de Preguntas' ),
-    'parent_item'      => __( 'Categoría padre de Preguntas' ),
-    'parent_item_colon'=> __( 'Categoría padre:' ),
-    'edit_item'        => __( 'Editar categoría de Preguntas' ), 
-    'update_item'      => __( 'Actualizar categoría de Preguntas' ),
-    'add_new_item'     => __( 'Agregar nueva categoría de Preguntas' ),
-    'new_item_name'    => __( 'Nuevo nombre categoría de Preguntas' ),
-    'menu_name'        => __( 'Categoria Preguntas' ),
-  ); 
-
-  // Now register the taxonomy
-  register_taxonomy('preguntas_category',array('pregunta'), array(
-    'hierarchical'     => true,
-    'labels'           => $labels4,
-    'show_ui'          => true,
-    'show_admin_column'=> true,
-    'query_var'        => true,
-    'rewrite'          => array( 'slug' => 'preguntas-category' ),
-  ));
 
 }
 

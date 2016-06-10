@@ -2,6 +2,11 @@
 
 //Importar Fuentes
 
+//Raleway
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,300,500,500italic,600,700)
+
+//Great+Vibes
+@import url(https://fonts.googleapis.com/css?family=Great+Vibes)
 
 
 /***************************************************************************************/
@@ -15,7 +20,9 @@ $gala_morado_oscuro_dark: #614587
 $gala_morado            : #AE37A9
 
 $gala_gray              : #5F5F5F
+$gala_gray_fondo        : #E2E1E7
 $gala_gray_claro        : #CDCDCD
+$gala_gray_oscuro       : #757276
 
 
 /***************************************************************************************/
@@ -127,7 +134,7 @@ figure
 			color: white
 
 //+Banners
-//++Banner Común
+//++Banner Común 
 .sectionCommon__banner
 	align-items    : center 
 	border         : 1px solid $gala_gray
@@ -160,6 +167,19 @@ figure
 	//Imagen
 	figure 
 		margin: 0 30px
+
+//+Banner Comun de Páginas en las cabeceras
+.pageCommon__banner__title
+	border-bottom: 4px solid white
+	color        : white
+	font-family  : "Raleway"
+	font-size    : 40px
+	font-weight  : 700
+	line-height  : 1em
+	margin       : -20px auto 0
+	padding      : 0 0 15px 80px
+	position     : absolute
+	top          : 50%
 
 //+BOTONES
 //++ Botón Ver Más
@@ -224,6 +244,12 @@ figure
 		background: $gala_morado_oscuro
 		color     : $gala_gray_claro 
 
+//MENSAJE ISOTOPE
+#message-isotope
+	color      : $gala_morado
+	font-family: "Relaway" , sans-serif
+	margin     : 0 auto 40px
+
 /***************************************************************************************/
 /**--  HEADER   ----------------------------------------------------------------------**/
 /***************************************************************************************/
@@ -261,10 +287,12 @@ figure
 		margin         : 0 auto
 		padding        : 0
 		li 
-			display: inline-block
-			padding: 0 22px
+			display : inline-block
+			padding : 0 22px
+			position: relative
 			a 
 				color          : gray
+				display        : block 
 				font-weight    : 600 
 				text-decoration: none
 				+transition( all 500ms ease-in )
@@ -272,6 +300,46 @@ figure
 			&.current-menu-item,&.current_page_item, &:hover  
 				a 
 					color: $gala_morado_oscuro
+
+			//hover 
+			&:hover
+				//submenu
+				ul.sub-menu
+					+opacity( 1 )
+					top       : 110%
+					z-index   : 999999
+					visibility: visible
+
+			//SUBMENU
+			ul.sub-menu
+				background   : white
+				border-bottom: 4px solid gray 
+				border-top   : 4px solid gray 
+				left         : 24px
+				padding      : 10% 0
+				padding      : 10px
+				position     : absolute
+				right        : 0px
+				text-align   : left
+				top          : 250%
+				visibility   : hidden
+				width        : 215px 
+				z-index      : -5
+				+opacity( 0 )
+				+transition( all 800ms ease )
+				//li 
+				li 
+					display: block
+					padding: 0 !important 
+					a 
+						border   : none
+						color    : $gala_morado_oscuro_dark
+						font-size: 16px
+					//active u hover
+					&.current-menu-item , &:hover
+						a 
+							background: rgba( 0, 0 , 0 , .3 )
+							color     : $gala_morado_oscuro_dark
 
 //VARIACION POSICION FIJA - MAIN NAVIGATION
 .mainNavigation--fixed 
@@ -370,17 +438,143 @@ figure
 /**--  PÁGINA NOSOTROS  --------------------------------------------------------------**/
 /***************************************************************************************/
 
+//Sección Descripción
+.pageNosotros__description
+	margin: 40px auto 30px
+	//Títulos 
+	h1,h2 
+		background         : url("../images/image-titulos-eventosgala.png") no-repeat
+		background-position: 50% 100%
+		color              : black 
+		font-family        : 'Great Vibes', cursive
+		font-size          : 40px
+		margin             : 0 auto 25px 
+		padding            : 0 0 20px
+
+	//Párrafos
+	p 
+		font-family: 'Raleway', sans-serif
+		margin     : 0 auto 20px 
+		max-width  : 65%
+
+//Seccion Aptitudes
+.pageNosotros__aptitudes
+	background : $gala_gray_fondo
+	font-family: "Raleway" , sans-serif
+	margin     : 0 auto 70px 
+	//Titulos
+	h3
+		color      : $gala_morado_oscuro
+		font-size  : 25px 
+		font-weight: 600 
+	//Parrafos
+	p 
+		color      : $gala_gray_oscuro 
+		font-weight: 500 
+
+//++Contenedor de Seccion
+.pageNosotros__aptitudes__content
+	padding : 43px 0 80px 
+
 /***************************************************************************************/
 /**--  PÁGINA SERVICIOS --------------------------------------------------------------**/
 /***************************************************************************************/
- 
-/***************************************************************************************/
-/**--  PÁGINA PORTAFOLIO -------------------------------------------------------------**/
-/***************************************************************************************/
+
+//+Contenedor Principal 
+.pageServicios
+	margin: 90px auto 0
+
+//Articule
+.pageServicios__item
+	font-family: "Raleway" , sans-serif
+	margin     : 0 auto 76px
+	//Lista o Contenido
+	ul 
+		list-style-type: none 
+		padding        : 0 
+		li 
+			//before
+			&:before 
+				background    : $gala_morado_oscuro_dark
+				content       : ""
+				display       : inline-block
+				height        : 5px 
+				margin        : 0 10px 0 0
+				vertical-align: middle
+				width         : 5px 
+	
+	//Imagen
+	figure 
+		overflow: hidden
+		img 
+			+transform( scale(1.0) translateZ(0) )
+			+transition( all 900ms cubic-bezier( 0.5, 0.5, 0.5, 1.5 ) )
+			backface-visibility: hidden
+		//Hover 
+		&:hover 
+			img 
+				+scale( 1.2 )
+
+//Contenido Article
+.pageServicios__item__content
+	padding: 0 20px
+
+//Titulo
+.pageServicios__item__title
+	background         : url("../images/image-titulos-eventosgala.png") no-repeat
+	background-position: 50% 100%
+	color              : $gala_gray
+	font-size          : 24px 
+	margin             : 0 auto 20px 
+	padding            : 0 0 25px 
+//Subtitle 
+.pageServicios__item__subtitle
+	color      : $gala_morado_oscuro_dark
+	font-family: 'Great Vibes', cursive
+
 
 /***************************************************************************************/
 /**--  PÁGINA MEDIA  -----------------------------------------------------------------**/
 /***************************************************************************************/
+
+//Sección Principal
+.pageMedia__multimedia
+	margin: 55px auto 0 
+	//Seccion de botones filtradores de categorias
+	.button-group
+		margin: 0 auto 60px
+		//botón
+		button 
+			+border-radius( 6px )  
+			background: white  
+			border    : 1px solid $gala_morado
+			margin    : 0 8px
+			outline   : 0 !important 
+			padding   : 5px 40px
+			+transition( all 500ms cubic-bezier( .5 , .5 , .5 , 1.5 ) )
+			//Hover u active
+			&:hover , &.active
+				background: $gala_morado
+				color     : white 
+			&:hover 
+				animation: expand 1000ms ease-in infinite
+
+
+
+//Contenedor de la seccion Principal
+.pageMedia__multimedia__content
+	//Articulos o Item dentro de Este contenedor 
+	.item-imagen
+		margin: 0 auto 40px
+		//Imagen
+		figure 
+			overflow: hidden
+			img 
+				+transition( all 500ms cubic-bezier( .5 ,.5 , .5 , 1.5 ) )
+			//Hover
+			&:hover 
+				img 
+					+scale( 1.2 )
 
 /***************************************************************************************/
 /**--  PÁGINA BLOG -------------------------------------------------------------------**/

@@ -76,52 +76,6 @@ function create_post_type(){
 		'menu_icon'   => 'dashicons-money',
 	);	
 
-	/*|>>>>>>>>>>>>>>>>>>>> TESTIMONIOS  <<<<<<<<<<<<<<<<<<<<|*/
-	
-	$labels4 = array(
-		'name'               => __('Testimonios'),
-		'singular_name'      => __('Testimonio'),
-		'add_new'            => __('Nueva Testimonio'),
-		'add_new_item'       => __('Agregar nuevo Testimonio'),
-		'edit_item'          => __('Editar Testimonio'),
-		'view_item'          => __('Ver Testimonio'),
-		'search_items'       => __('Buscar Testimonio'),
-		'not_found'          => __('Testimonio no encontrado'),
-		'not_found_in_trash' => __('Testimonio no encontrado en la papelera'),
-	);
-
-	$args4 = array(
-		'labels'      => $labels4,
-		'has_archive' => true,
-		'public'      => true,
-		'hierachical' => false,
-		'supports'    => array('title','editor','excerpt','custom-fields','thumbnail','page-attributes'),
-		'taxonomies'  => array('post-tag','category'),
-		'menu_icon'   => 'dashicons-index-card',
-	);
-	/*|>>>>>>>>>>>>>>>>>>>> PROYECTOS  <<<<<<<<<<<<<<<<<<<<|*/
-	
-	$labels5 = array(
-		'name'               => __('Portafolio'),
-		'singular_name'      => __('Proyecto'),
-		'add_new'            => __('Nueva Proyecto'),
-		'add_new_item'       => __('Agregar nuevo Proyecto'),
-		'edit_item'          => __('Editar Proyecto'),
-		'view_item'          => __('Ver Proyecto'),
-		'search_items'       => __('Buscar Proyecto'),
-		'not_found'          => __('Proyecto no encontrado'),
-		'not_found_in_trash' => __('Proyecto no encontrado en la papelera'),
-	);
-
-	$args5 = array(
-		'labels'      => $labels5,
-		'has_archive' => true,
-		'public'      => true,
-		'hierachical' => false,
-		'supports'    => array('title','editor','excerpt','custom-fields','thumbnail','page-attributes'),
-		'taxonomies'  => array('post-tag'),
-		'menu_icon'   => 'dashicons-portfolio',
-	);
 	/*|>>>>>>>>>>>>>>>>>>>> PROMOCIONES  <<<<<<<<<<<<<<<<<<<<|*/
 	
 	$labels6 = array(
@@ -145,30 +99,7 @@ function create_post_type(){
 		'taxonomies'  => array('post-tag','category'),
 		'menu_icon'   => 'dashicons-portfolio',
 	);	
-	/*|>>>>>>>>>>>>>>>>>>>> TEAM  <<<<<<<<<<<<<<<<<<<<|*/
 	
-	$labels7 = array(
-		'name'               => __('Team'),
-		'singular_name'      => __('Miembro'),
-		'add_new'            => __('Nuevo Miembro'),
-		'add_new_item'       => __('Agregar nuevo Miembro'),
-		'edit_item'          => __('Editar Miembro'),
-		'view_item'          => __('Ver Miembro'),
-		'search_items'       => __('Buscar Miembro'),
-		'not_found'          => __('Miembro no encontrado'),
-		'not_found_in_trash' => __('Miembro no encontrado en la papelera'),
-	);
-
-	$args7 = array(
-		'labels'      => $labels7,
-		'has_archive' => true,
-		'public'      => true,
-		'hierachical' => false,
-		'supports'    => array('title','editor','excerpt','custom-fields','thumbnail','page-attributes'),
-		'taxonomies'  => array('post-tag','category'),
-		'menu_icon'   => 'dashicons-id',
-	);	
-
 	/*|>>>>>>>>>>>>>>>>>>>> GALERÍA IMAGENES  <<<<<<<<<<<<<<<<<<<<|*/
 	
 	$labels8 = array(
@@ -189,7 +120,7 @@ function create_post_type(){
 		'public'      => true,
 		'hierachical' => false,
 		'supports'    => array('title','editor','excerpt','custom-fields','thumbnail','page-attributes'),
-		'taxonomies'  => array('post-tag','category'),
+		'taxonomies'  => array('post-tag'),
 		'menu_icon'   => 'dashicons-images-alt2',
 	);	
 
@@ -217,42 +148,14 @@ function create_post_type(){
 		'menu_icon'   => 'dashicons-video-alt',
 	);
 
-	/*|>>>>>>>>>>>>>>>>>>>> PREGUNTAS  <<<<<<<<<<<<<<<<<<<<|*/
-	
-	$labels10 = array(
-		'name'               => __('Preguntas'),
-		'singular_name'      => __('Pregunta'),
-		'add_new'            => __('Nueva Pregunta'),
-		'add_new_item'       => __('Agregar nueva Pregunta'),
-		'edit_item'          => __('Editar Pregunta'),
-		'view_item'          => __('Ver Pregunta'),
-		'search_items'       => __('Buscar Pregunta'),
-		'not_found'          => __('Pregunta no encontrada'),
-		'not_found_in_trash' => __('Pregunta no encontrada en la papelera'),
-	);
-
-	$args10 = array(
-		'labels'      => $labels10,
-		'has_archive' => true,
-		'public'      => true,
-		'hierachical' => false,
-		'supports'    => array('title','editor','excerpt','custom-fields','thumbnail','page-attributes'),
-		'taxonomies'  => array('post-tag'),
-		'menu_icon'   => 'dashicons-portfolio',
-	);
-
 
 	/*|>>>>>>>>>>>>>>>>>>>> REGISTRAR  <<<<<<<<<<<<<<<<<<<<|*/
 	register_post_type( 'banner'   , $args  );
 	register_post_type( 'servicio' , $args2 );
 	register_post_type( 'cliente' , $args3 );
-	register_post_type( 'testimonio' , $args4 );
-	register_post_type( 'proyecto' , $args5 );
 	register_post_type( 'promocion' , $args6 );
-	register_post_type( 'team' , $args7 );
 	register_post_type( 'galery-images' , $args8 );
 	register_post_type( 'galery-videos' , $args9 );
-	register_post_type( 'pregunta' , $args10 );
 
 	flush_rewrite_rules();
 }

@@ -138,30 +138,33 @@ var j = jQuery.noConflict();
 
 
 		/*|----------------------------------------------------------------------|*/
-		/*|-----  ISOTOPE DE PROYECTOS   -----|*/
+		/*|-----  ISOTOPE DE IMAGENES  -----|*/
 		/*|----------------------------------------------------------------------|*/
 
-		var container_proyectos = j("#portafolio-proyectos");
-		if( container_proyectos.length ){
+		var container_imagenes = j("#galeria-imagenes");
+		if( container_imagenes.length ){
+
 			//Isotope
-			container_proyectos.isotope({
+			container_imagenes.isotope({
 				// options
-				itemSelector: '.item-proyecto',
+				itemSelector: '.item-imagen',
 				layoutMode  : 'fitRows',
 			});
+
+			container_imagenes.isotope( 'layout' );
 
 			//Filtros
 			j('.filter-button-group').on( 'click', 'button', function() {
 			 	var filterValue = j(this).attr('data-filter');
-				container_proyectos.isotope({ filter: filterValue });
+				container_imagenes.isotope({ filter: filterValue });
 				//activar elemento actual
 				j('.filter-button-group button').removeClass('active');
 				j(this).addClass('active');
 
 				//Si no encuentra contenido
-				if ( !container_proyectos.data('isotope').filteredItems.length ) {
-				    j('#message-proyecto').fadeIn('slow');
-				} else { j('#message-proyecto').fadeOut('fast'); }
+				if ( !container_imagenes.data('isotope').filteredItems.length ) {
+				    j('#message-isotope').fadeIn('slow');
+				} else { j('#message-isotope').fadeOut('fast'); }
 				
 			});
 		}
@@ -308,6 +311,11 @@ var j = jQuery.noConflict();
 				/* Si no  */ j(".mainNavigation").removeClass('mainNavigation--fixed');
 			}
 
+		}
+
+		/* CONTENEDOR ISOTOPE - Permite reorganizar el contenedor del isotope */
+		if( j("#galeria-imagenes").length ){
+			j("#galeria-imagenes").isotope( 'layout' );
 		}
 
 	});

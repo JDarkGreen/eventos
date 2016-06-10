@@ -323,48 +323,28 @@ function cd_banner_text_save( $post_id )
 /*|------------ METABOX EDITOR WYSIWYG PARA CADA SERVICIO  -----------------|*/
 /*|-------------------------------------------------------------------------|*/
 
-//Este metabox permite obtener campos personalizados para 
-//editar los servicios como las características, el requerimiento y el
-//tiempo estimado
-
+//Este metabox permite agregar un editor de texto para el segundo paquete
+//en este caso de servicio
 add_action('add_meta_boxes', 'theme_register_add_editors');
 
 function theme_register_add_editors(){
-	add_meta_box('WYSIWG_THEME_PERF' , __('Información Servicio: Detalles' , LANG ) , 'custom_theme_cb' , array('servicio') );
+	add_meta_box('WYSIWG_THEME_PERF' , __('Servicio: Paquete 2' , LANG ) , 'custom_theme_cb' , array('servicio') );
 }
 
 function custom_theme_cb(){
 	global $post;
 	$option_content = array('editor_height'=>'200');
 
-	echo "<h2><strong> Características de Servicio: </strong></h2>";
-	$text1 = get_post_meta( $post->ID , 'custom_theme_'.$post->ID.'_characters' , true );
-	wp_editor( htmlspecialchars_decode( $text1 ), 'custom_theme_'.$post->ID.'_characters' , $option_content );	
-
-	echo "<h2><strong> Requerimientos de Servicio: </strong></h2>";
-	$text2 = get_post_meta( $post->ID , 'custom_theme_'.$post->ID.'_requirements' , true );
-	wp_editor( htmlspecialchars_decode( $text2 ), 'custom_theme_'.$post->ID.'_requirements' , $option_content );	
-
-	echo "<h2><strong> Tiempo Estimado de Servicio: </strong></h2>";
-	$text3 = get_post_meta( $post->ID , 'custom_theme_'.$post->ID.'_time' , true );
-	wp_editor( htmlspecialchars_decode( $text3 ), 'custom_theme_'.$post->ID.'_time' , $option_content );
+	echo "<h2><strong> Servicio: Información de 2 Paquete </strong></h2>";
+	$text1 = get_post_meta( $post->ID , 'custom_theme_'.$post->ID.'_pack2' , true );
+	wp_editor( htmlspecialchars_decode( $text1 ), 'custom_theme_'.$post->ID.'_pack2' , $option_content );	
 }
 
 function custom_theme_save_postdata( $post_id ){
 
-	if( !empty( $_POST['custom_theme_'.$post_id.'_characters'] ) ){
-		$data = htmlspecialchars( $_POST['custom_theme_'.$post_id.'_characters'] );
-		update_post_meta( $post_id, 'custom_theme_'.$post_id.'_characters' , $data );
-	}	
-
-	if( !empty( $_POST['custom_theme_'.$post_id.'_requirements'] ) ){
-		$data = htmlspecialchars( $_POST['custom_theme_'.$post_id.'_requirements'] );
-		update_post_meta( $post_id, 'custom_theme_'.$post_id.'_requirements' , $data );
-	}	
-
-	if( !empty( $_POST['custom_theme_'.$post_id.'_time'] ) ){
-		$data = htmlspecialchars( $_POST['custom_theme_'.$post_id.'_time'] );
-		update_post_meta( $post_id, 'custom_theme_'.$post_id.'_time' , $data );
+	if( !empty( $_POST['custom_theme_'.$post_id.'_pack2'] ) ){
+		$data = htmlspecialchars( $_POST['custom_theme_'.$post_id.'_pack2'] );
+		update_post_meta( $post_id, 'custom_theme_'.$post_id.'_pack2' , $data );
 	}
 }
 
