@@ -17,7 +17,7 @@
 	
 	<!-- Seccíon Banner Común - Nosotros -->
 	<section class="sectionCommon__banner">
-		<!-- Imagen --> <figure><img src="<?= IMAGES ?>/banners/nosotros_gala_eventos.jpg" alt="nosotros-galaeventos" class="img-fluid" /></figure>
+		<!-- Imagen --> <figure class="hidden-xs-down"><img src="<?= IMAGES ?>/banners/nosotros_gala_eventos.jpg" alt="nosotros-galaeventos" class="img-fluid" /></figure>
 		<!-- Contenido -->
 		<div class="sectionCommon__banner__content text-xs-center">
 			<!-- Título --> <h2 class=""><?php _e('Nosotros', LANG ); ?></h2>
@@ -29,7 +29,7 @@
 
 	<!-- Seccíon Banner Común - Nuestros Servicios -->
 	<section class="sectionCommon__banner">
-		<!-- Imagen --> <figure><img src="<?= IMAGES ?>/banners/servicio1_gala_eventos.jpg" alt="nosotros-galaeventos" class="img-fluid" /></figure>
+		<!-- Imagen --> <figure class="hidden-xs-down"><img src="<?= IMAGES ?>/banners/servicio1_gala_eventos.jpg" alt="nosotros-galaeventos" class="img-fluid" /></figure>
 		<!-- Contenido -->
 		<div class="sectionCommon__banner__content text-xs-center">
 			<!-- Título --> <h2 class=""><?php _e('Nuestros Servicios', LANG ); ?></h2>
@@ -37,7 +37,7 @@
 			<!-- Párrafo --> <p class=""><?php _e( 'Te invitamos a ver nuestros servicios.' ,LANG ); ?></p>
 			<!-- Botón en Común --> <a href="#" class="btnCommon__show-more"><?php _e('Ver más' , LANG ); ?></a>
 		</div> <!-- /.sectionCommon__banner__content -->
-		<!-- Imagen --> <figure><img src="<?= IMAGES ?>/banners/servicio1_gala_eventos.jpg" alt="nosotros-galaeventos" class="img-fluid" /></figure>
+		<!-- Imagen --> <figure class="hidden-xs-down"><img src="<?= IMAGES ?>/banners/servicio1_gala_eventos.jpg" alt="nosotros-galaeventos" class="img-fluid" /></figure>
 	</section> <!-- /.sectionCommon__banner -->
 
 	<!-- Sección Miscelaneo -->
@@ -45,7 +45,7 @@
 		<div class="row">
 
 			<!-- Sección de Galerías -->
-			<div class="col-xs-8">
+			<div class="col-xs-12 col-md-8">
 				<!-- Titulo --> <h2 class="sectionCommon__title-section"> <?php _e('Galerías' , LANG ); ?>
 				</h2> <!-- /.sectionCommon__title-section -->
 				<!-- Contenedor Galerías -->
@@ -77,10 +77,14 @@
 				<div class="text-xs-center">
 					<a href="#" class="btnCommon__show-more"> <?php _e('Ver más' , LANG ); ?> </a>
 				</div> <!-- /.text-xs-center -->
+
+				<!-- Separador Solo en mobile -->
+				<p class="hidden-sm-up"></p>
+
 			</div> <!-- /.col-xs-8 -->
 
 			<!-- Sección de Facebook -->
-			<div class="col-xs-4">
+			<div class="col-xs-12 col-md-4">
 				<!-- Titulo --> <h2 class="sectionCommon__title-section"> <?php _e('Facebook' , LANG ); ?>
 				</h2> <!-- /.sectionCommon__title-section -->
 

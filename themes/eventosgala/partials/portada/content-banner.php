@@ -31,9 +31,21 @@
 	<div class="carousel-inner" role="listbox">
 
 		<?php while( $the_query->have_posts() ) : $the_query->the_post(); ?>
-	    <div class="carousel-item <?= $i == 0 ? 'active' : '' ?>">
-	    	<?php if( has_post_thumbnail() ) : the_post_thumbnail('full',array('class'=>'img-fluid')); ?>
-	    	<?php endif; ?>
+		
+		<!-- Obtener Imagen Destacada o en su defect oobtener un place image -->
+		<?php  
+			$feat_image = "";
+			if( has_post_thumbnail() ) : 
+				$feat_image = wp_get_attachment_url( get_post_thumbnail_id() );
+			else: 
+				$feat_image = "https://placeimg.com/1920/721/any";
+			endif;
+		?>
+
+	    <div class="carousel-item <?= $i == 0 ? 'active' : '' ?>" style='background-image: url("<?= $feat_image; ?>")'>
+			
+			<!-- Imagen -->
+			<img src="<?= $feat_image; ?>" alt="eventos-gala-imagen-catering-<?= $i ?>" class="img-fluid hidden-xs-down">
 
 	    	<!-- Caption o Información -->
 				<div class="carousel-caption">

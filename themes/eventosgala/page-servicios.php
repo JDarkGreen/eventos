@@ -37,7 +37,7 @@
 					<div class="row">
 						
 						<!-- Imagen -->
-						<div class="col-xs-5">
+						<div class="col-xs-12 col-md-5">
 							<!-- Conseguir url de imagen -->
 							<?php 
 								if( has_post_thumbnail( $servicio->ID ) ) : 
@@ -53,7 +53,7 @@
 						</div> <!-- /.col-xs-4 -->
 
 						<!-- Contenido -->
-						<div class="col-xs-7">
+						<div class="col-xs-12 col-md-7">
 							<!-- Titulo --> <h2 class="pageServicios__item__title text-uppercase text-xs-center"><?php _e( $servicio->post_title , LANG ); ?></h2>
 
 							<!-- Contenido  -->
@@ -61,14 +61,14 @@
 								
 								<div class="row">
 									
-									<div class="col-xs-6">
+									<div class="col-xs-12 col-md-6">
 										<!-- Paquete 1 -->
 										<!-- Subtitulo --> <h3 class="pageServicios__item__subtitle"><?php _e( "Paquete 1" , LANG ); ?></h3>
 										<!-- Lista -->
 										<?= apply_filters('the_content' , $servicio->post_content ); ?>
 									</div> <!-- /.col-xs-6 -->
 
-									<div class="col-xs-6">
+									<div class="col-xs-12 col-md-6">
 										<!-- Paquete 2 -->
 										<!-- Subtitulo --> <h3 class="pageServicios__item__subtitle"><?php _e( "Paquete 2" , LANG ); ?></h3>
 										<!-- Lista -->

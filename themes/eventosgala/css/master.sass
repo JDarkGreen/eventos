@@ -204,11 +204,21 @@ figure
 
 //++Variacion Mas pequeño
 .btnCommon__show-more--small
-	+border-radius( 10px )
-	padding: 5px 40px
+	//+border-radius( 10px )
+	padding: 7px 30px
 
 //+TITULOS
-//++ Título de Secciones Común
+//++ Titulo de Paginas
+.pageCommon__title
+	background         : url("../images/image-titulos-eventosgala.png") no-repeat
+	background-position: 50% 100%
+	color              : #000
+	font-family        : "Great Vibes",cursive
+	font-size          : 40px
+	margin             : 0 auto 25px
+	padding            : 0 0 20px	
+
+//++ SubTítulo de Secciones Común
 .pageCommon__section-subtitle
 	font-size: 25px
 	margin   : 0 auto 30px 
@@ -271,10 +281,14 @@ figure
 	+transition( all 500ms ease )
 	background   : white 
 	border-bottom: 3px solid $gala_morado_claro
+	position     : relative
+	z-index      : 999
+
 .mainNavigation__content
 	display        : flex 
 	justify-content: space-between
 	padding        : 30px 0 7px
+	flex-wrap      : wrap
 
 	//Logo Principal
 	.logo
@@ -425,13 +439,16 @@ figure
 
 //+ Sección Promociones
 .pageInicio__promocion
-	border: 1px solid $gala_gray
 	margin: 43px auto 0
 	//Contenido Sección Promocion
 	.content-promocion
 		left    : 40px 
 		position: absolute
 		top     : 53px
+	//Imagen de Promoción
+	img 
+		border: 1px solid $gala_gray
+
 
 
 /***************************************************************************************/
@@ -559,8 +576,6 @@ figure
 			&:hover 
 				animation: expand 1000ms ease-in infinite
 
-
-
 //Contenedor de la seccion Principal
 .pageMedia__multimedia__content
 	//Articulos o Item dentro de Este contenedor 
@@ -580,6 +595,76 @@ figure
 /**--  PÁGINA BLOG -------------------------------------------------------------------**/
 /***************************************************************************************/
 
+//Sección General
+.pageBlog
+	font-family: "Raleway"
+	margin     : 100px auto 0
+
+//Seccion Preview Items de Blog
+.pageCommon__preview-blog
+	//Articulos preview de blog
+	.item-blog
+		margin: 0 auto 36px
+		//Imagen
+		figure 
+			overflow: hidden
+			img 
+				+transform( scale(1.0) translateZ(0) )
+				+transition( all 500ms cubic-bezier( .5 , .5 ,.5 , 1.5) )
+				backface-visibility: hidden
+			//Hover
+			&:hover 
+				img 
+					+scale( 1.2 )
+		
+		//Título
+		h2 
+			font-size: 20px
+
+// SINGLE [ Desarrollo de Blog ]
+
+//Imagen Destacada de Blog
+.pageBlog__image-featured
+	margin: 0 auto 30px
+
+//Sección Compartir Blog
+.item-blog__share
+	//Titulo
+	h3 
+		color    : $gala_morado_oscuro
+		font-size: 25px 
+
+//Sobreescribir Formulario de Comentarios
+.comment-form
+	label 
+		display: block
+	textarea 
+		height    : 150px 
+		max-height: 150px 
+		width     : 100%
+
+// SIDEBAR CATEGORIAS [ ]
+.pageBlog__sidebar__categories
+	//Titulo
+	h2 
+		border-bottom: 3px solid $gala_morado_oscuro
+		display      : inline-block
+		font-size    : 20px
+		padding      : 0 0 15px 
+	//Item de esta categoría
+	.item-category
+		border-bottom: 1px solid $gala_gray_claro
+		padding      : 22px 0 20px 
+		a 
+			color          : black
+			display        : block
+			text-decoration: none
+			+transition( all 500ms ease-in-out )
+			//hover u active
+			&:hover , &.active 
+				color: $gala_morado_oscuro
+
+
 /************************************************************************************/
 /**--  PÁGINA PREGUNTAS -----------------------------------------------------------**/
 /************************************************************************************/
@@ -588,6 +673,62 @@ figure
 /**--  PÁGINA CONTACTO ---------------------------------------------------------------**/
 /***************************************************************************************/
 
+//Sección General
+.pageContacto
+	margin: 50px auto 0
+
+//Titulos de Está página
+.pageContacto__title
+	font-size  : 30px 
+	font-weight: 600 
+	margin     : 0 auto 35px 
+
+//Lista de Datos de Contacto Menú
+.pageContacto__list-datos
+	list-style-type: none 
+	margin         : 0 auto 112px 
+	padding        : 0 0 0 38px 
+	li 
+		margin: 0 auto 12px
+		//variacion  texto destacado
+		&.text-featured 
+			color: $gala_morado_oscuro_dark
+		//Iconos
+		i 
+			color         : $gala_gray_oscuro
+			font-size     : 27px
+			height        : 29px 
+			margin        : 0 5px 0 -38px 
+			text-align    : center
+			vertical-align: middle
+			width         : 29px 
+
+//Sección de Información
+.pageContacto__information
+	font-family: "Raleway" , sans-serif
+	margin     : 50px auto
+
+//Formulario de Contacto
+.pageContacto__form
+	//inputs y labels , textarea
+	input, textarea
+		border : 1px solid $gala_gray_claro
+		margin : 0 auto 13px 
+		outline: 0 
+		padding: 8px 24px
+		width  : 100% 
+		+border-radius( 5px )
+	//textarea
+	textarea
+		height    : 110px 
+		max-height: 110px 
+
+
+//SECCIÓN MAPA
+
+#canvas-map
+	height: 342px 
+	width : 100%
 
 /***************************************************************************************/
 /**--  MAIN FOOTER  ------------------------------------------------------------------**/
@@ -630,6 +771,166 @@ figure
 /*-- MEDIA QUERIES -----------------------------------------------------------------*/
 /************************************************************************************/
 
-//480px
+//568px
 @media ( max-width: 568px )
+
+	//SECCIONES COMUNES 
+
+	//++ Banner de Servicio
+	.sectionCommon__banner__services
+		//Titulo
+		h2 
+			margin: 0 auto 20px 
+
+	//++Banner Comun Inicio
+	.sectionCommon__banner
+		padding: 10px
+	
+	//+ Contendor SB SITE Slidebar
+	#sb-site
+		padding: 28% 0 0 
+	
+	//++BANNER CABECERA DE PÁGINAS
+	.pageCommon__banner
+		//Imagen background - figure 
+		figure 
+			background-size: cover
+			height         : 100px
+
+	//Social Links
+	.social-links
+		display: block
+
+	// =========  HEADER =================
+
+	.mainHeader
+		background: white 
+		left      : 0 
+		position  : fixed
+		right     : 0 
+		top       : 0
+		z-index   : 99
+		//Iconos
+		.icon-header
+			color    : $gala_morado_oscuro_dark
+			font-size: 40px
+		//Logo
+		.logo 
+			margin   : 0 15px 
+			max-width: 60%
+
+	// ========= MAIN NAVIGATION =========
+
+	//Clases sobreescribir 
+	.menu-main-menu-left-container , .menu-main-menu-right-container
+		width: 100%
+
+	//Contenedor 
+	.mainNavigation__content 
+		ul.main-menu 
+			display: block 
+			li
+				display: block 
+				+transition( all 500ms cubic-bezier(.5,.5,.5,1.5) )
+				a 
+					padding: 15px 0
+				//Activo u Hover 
+				&.current-menu-item,&.current_page_item, &:hover 
+					background: white
+
+					//Submenu 
+					ul.sub-menu
+						max-height: 100em 
+						padding   : 5px 10px 
+				
+				//SubMenu
+				ul.sub-menu
+					background: black
+					border    : 0
+					left      : -10%
+					max-height: 0em
+					overflow  : hidden
+					padding   : 0
+					position  : relative
+					
+
+	// =========  PAGINA INICIO ==========
+
+	//++Carousel de Inicio
+	.pageInicio__slider
+		.carousel-inner
+			.carousel-item 
+				background-size: cover 
+				height         : 250px 
+		//Indicadores
+		.carousel-indicators
+			bottom: 85%
+			left  : 60%
+
+	//++Seccion Miscelaneo
+	.pageInicio__miscelaneo 
+		margin: 30px auto
+		.item-gallery
+			width: 100%
+	
+	//++Sección Promoción
+	.pageInicio__promocion 
+		.content-promocion
+			position: relative
+			left    : 0
+			top     : 0 
+
+	// ========= PAGINA NOSOTROS =========
+	
+	//Descripción
+	.pageNosotros__description
+		p
+			max-width: 100%
+
+	// ========= PAGINA SERVICIOS =======
+	
+	//Sección Principal
+	.pageServicios
+		margin: 25px auto 0
+
+	//Artículos
+	.pageServicios__item
+		margin: 0 auto 20px
+		//Imagen 
+		figure 
+			margin: 0 auto 15px
+
+	// ======== PAGINA MULTIMEDIA =======
+
+	//++Botones 
+	.pageMedia__multimedia 
+		.button-group 
+			button
+				display: block
+				margin : 0 auto 10px 
+
+	// ======= PAGINA BLOG     =========
+
+	//Sección Aside de Categorías de Blog
+	.pageBlog__sidebar__categories
+		color  : white 
+		padding: 20px 10px 
+		//Item
+		.item-category
+			a
+				color: white
+
+	// ======= PAGINA CONTACTO =========
+
+	//++Lista de Datos
+	.pageContacto__list-datos
+		margin: 0 auto 20px
+
+	//++Titulos de Contacto
+	.pageContacto__title
+		margin: 0 auto 10px
+
+	//MAIN FOOTER
+	.mainFooter
+		background-size: cover 
 

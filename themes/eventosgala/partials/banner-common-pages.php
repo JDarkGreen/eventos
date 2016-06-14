@@ -5,14 +5,14 @@
 	<!-- BANNER DE LA PAGINA -->
 	<section class="pageCommon__banner relative">
 		<!-- Conseguir el banner por defecto -->
-		<?php $img_banner = get_post_meta($banner->ID, 'input_img_banner_'.$banner->ID , true); ?>
+		<?php 
+			$img_banner = get_post_meta($banner->ID, 'input_img_banner_'.$banner->ID , true); 
+			if( empty($img_banner) || $img_banner != -1 ) {
+				$img_banner = "https://placeimg.com/1920/251/any";
+			}
+		?>
 		<figure style='background: url("<?= $img_banner; ?>")'>
-			<?php if( !empty($img_banner) && $img_banner != -1 ) :
-			?>
-				<img src="<?= $img_banner ?>" alt="banner-nosotros-empresa-pbg" class="img-responsive" />
-			<?php else: ?>
-				<img src="http://placekitten.com/1920/160" alt="eventos-gala-eventosgala" class="img-responsive" />
-			<?php endif; ?>
+			<img src="<?= $img_banner ?>" alt="banner-nosotros-empresa-pbg" class="img-fluid hidden-xs-down" />
 		</figure>
 
 		<!-- Título de la pagina posicion absoluta -->

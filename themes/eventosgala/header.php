@@ -36,9 +36,11 @@
 	?>
 
 <!-- Header -->
-<main class="mainHeader">
-	<!-- Sección Datos -->
-	<section class="mainHeader__info">
+<header class="mainHeader sb-slide">
+
+
+	<!-- Sección Datos Ocultar en Mobile -->
+	<section class="mainHeader__info hidden-xs-down">
 		<div class="container">
 
 			<!-- Redes Sociales -->
@@ -73,43 +75,97 @@
 
 	</section> <!-- /.mainHeader__info -->
 
+	<!-- Solo en version mobile -->
+	<div class="hidden-sm-up">
+		<!-- Contenedor con posicion flex  -->
+		<div class="container-flex align-content">
+
+			<!-- Icono Abrir menu izquierdo -->
+			<div class="icon-header">
+				<i id="toggle-left-nav" class="fa fa-bars" aria-hidden="true"></i>
+			</div><!-- /.icon-header -->
+
+			<!-- Logo en General  -->
+			<h1 class="logo">
+				<a href="<?= site_url() ?>">
+					<?php if( !empty($options['logo']) ) : ?>
+						<img src="<?= $options['logo'] ?>" alt="<?= "-logo-" . bloginfo('name') ?>" class="img-fluid center-block" />
+					<?php else: ?>
+						<img src="<?= IMAGES ?>/logo.png" alt="<?= "-logo-" . bloginfo('name') ?>" class="img-fluid center-block" />
+					<?php endif; ?>
+				</a>
+			</h1><!-- /logo -->								
+
+			<!-- Icono Abrir menu derecho -->
+			<div class="icon-header">
+				<i id="toggle-right-nav" class="fa fa-bars" aria-hidden="true"></i>
+			</div><!-- /.icon-header -->	
+
+		</div> <!-- /.col-xs-12 -->
+	</div> <!-- /.hidden-sm-up -->
+
+</header> <!-- /.mainHeader -->
+
+<!-- Navegación Principal Ocultar en Mobile -->
+<nav class="mainNavigation text-uppercase hidden-xs-down">
+	<div class="container">
+
+		<div class="mainNavigation__content">
+			<!-- Menu Principal Lado Izquierdo -->
+			<?php wp_nav_menu(
+				array(
+					'menu_class'     => 'main-menu text-center',
+					'theme_location' => 'main-menu-left'
+				));
+			?>
+
+			<!-- Logo Principal -->
+			<h1 class="logo">
+				<a href="<?= site_url() ?>">
+					<?php if( !empty($options['logo']) ) : ?>
+						<img src="<?= $options['logo'] ?>" alt="<?= "-logo-" . bloginfo('name') ?>" class="img-responsive center-block" />
+					<?php else: ?>
+						<img src="<?= IMAGES ?>/logo.png" alt="<?= "-logo-" . bloginfo('name') ?>" class="img-responsive center-block" />
+					<?php endif; ?>
+				</a>
+			</h1> <!-- /.lgoo -->		
+
+			<!-- Menu Principal Lado Derecho -->
+			<?php wp_nav_menu(
+				array(
+					'menu_class'     => 'main-menu text-center',
+					'theme_location' => 'main-menu-right'
+				));
+			?>		
+			
+		</div> <!-- /.mainNavigation__content container-flex align-content -->
+	</div> <!-- /.container -->
+</nav> <!-- /.mainNavigation -->
+
+<!-- Contenedor Izquierda Version Mobile -->
+<aside class="sb-slidebar sb-left sb-style-push" data-sb-width="67%">
 	<!-- Navegación Principal -->
-	<nav class="mainNavigation text-uppercase">
-		<div class="container">
+	<nav class="mainNavigation__content">
+		<?php wp_nav_menu(
+			array(
+				'menu_class'     => 'main-menu',
+				'theme_location' => 'main-menu-left'
+			));
+		?>			
+		<?php wp_nav_menu(
+			array(
+				'menu_class'     => 'main-menu',
+				'theme_location' => 'main-menu-right'
+			));
+		?>					
+	</nav> <!-- /.mainNav -->  
+</aside> <!-- /.sb-slidebar sb-left sb-style-push -->
 
-			<div class="mainNavigation__content">
-				<!-- Menu Principal Lado Izquierdo -->
-				<?php wp_nav_menu(
-					array(
-						'menu_class'     => 'main-menu text-center',
-						'theme_location' => 'main-menu-left'
-					));
-				?>
-
-				<!-- Logo Principal -->
-				<h1 class="logo">
-					<a href="<?= site_url() ?>">
-						<?php if( !empty($options['logo']) ) : ?>
-							<img src="<?= $options['logo'] ?>" alt="<?= "-logo-" . bloginfo('name') ?>" class="img-responsive center-block" />
-						<?php else: ?>
-							<img src="<?= IMAGES ?>/logo.png" alt="<?= "-logo-" . bloginfo('name') ?>" class="img-responsive center-block" />
-						<?php endif; ?>
-					</a>
-				</h1> <!-- /.lgoo -->		
-
-				<!-- Menu Principal Lado Derecho -->
-				<?php wp_nav_menu(
-					array(
-						'menu_class'     => 'main-menu text-center',
-						'theme_location' => 'main-menu-right'
-					));
-				?>		
-				
-			</div> <!-- /.mainNavigation__content container-flex align-content -->
-		</div> <!-- /.container -->
-	</nav> <!-- /.mainNavigation -->
-</main> <!-- /.mainHeader -->
-
+<!-- Contenedor Derecha Version Mobile -->
+<aside class="sb-slidebar sb-right sb-style-push" data-sb-width="67%"> 
+	<!-- Incluir las categorias de los posts -->
+	<?php include( locate_template("partials/sidebar-categories.php") ); ?>
+</aside> <!-- /.sb-slidebar sb-right sb-style-push -->
 
 
 <!-- Flecha Indicador hacia arriba -->

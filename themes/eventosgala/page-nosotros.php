@@ -33,7 +33,7 @@
 		<div class="container">
 			<div class="row">
 				
-				<div class="col-xs-4 text-justify">
+				<div class="col-xs-12 col-md-4 text-justify">
 					
 					<!-- Contenedor  -->
 					<div class="pageNosotros__aptitudes__content">
@@ -72,7 +72,7 @@
 				</div> <!-- /.col-xs-3 -->
 				
 				<!-- Imagen de la Sección -->	
-				<div class="col-xs-8">
+				<div class="col-xs-12 col-md-8">
 					<?php if( has_post_thumbnail($post->ID) ) : 
 						echo get_the_post_thumbnail( $post->ID , 'full' , array('class'=>'img-fluid') );
 						endif;

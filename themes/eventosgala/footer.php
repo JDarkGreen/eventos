@@ -7,10 +7,10 @@
 
 		<div class="container">
 
-			<div class="row">
+			<div class="row text-xs-center text-md-left">
 
 				<!-- Logo -->
-				<div class="col-xs-3">
+				<div class="col-xs-12 col-md-3">
 					<h1 class="logo">
 						<a href="<?= site_url() ?>">
 							<?php if( !empty($options['logo']) ) : ?>
@@ -23,7 +23,7 @@
 				</div> <!-- /.col-xs-3 -->
 
 				<!-- Información -->
-				<div class="col-xs-3 text-justify">
+				<div class="col-xs-12 col-md-3 text-justify">
 					<!-- Extrar la data de la opcion text nosotros -->
 					<?php 
 						if( isset($options['widget_footer']) && !empty($options['widget_footer']) ) :  echo apply_filters('the_content' , $options['widget_footer'] );
@@ -34,7 +34,7 @@
 				</div> <!-- /.col-xs-3 -->
 				
 				<!-- Nuestros Servicios -->
-				<div class="col-xs-3">
+				<div class="col-xs-12 col-md-3">
 					<!-- Título --> <h2 class="pageCommon__section-subtitle"> <?php _e('Nuestros Servicios' , LANG ); ?></h2>
 					<!-- Contenido -->
 					<?php 
@@ -46,7 +46,7 @@
 				</div> <!-- /.col-xs-3 -->
 				
 				<!-- Contactos -->
-				<div class="col-xs-3">
+				<div class="col-xs-12 col-md-3">
 					<!-- Título --> <h2 class="pageCommon__section-subtitle"> <?php _e('Contáctanos' , LANG ); ?></h2>
 
 					<!-- Contenido Lista Datos -->

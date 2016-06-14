@@ -85,10 +85,8 @@
 
 			<!-- Mensaje Isotope en caso no se haya encontrado elementos -->
 			<div id="message-isotope" style="display:none;">
-				<h2 class="pageCommon__title text-xs-center text-uppercase"> <?php _e('No hay Imágenes en esta categoría aún' , LANG ); ?></h2>
+				<h2 class="pageCommon__title text-xs-center"> <?php _e('No hay Imágenes en esta categoría aún' , LANG ); ?></h2>
 			</div> <!-- /#message-proyecto -->
-
-
 
 		</div> <!-- /.container -->
 

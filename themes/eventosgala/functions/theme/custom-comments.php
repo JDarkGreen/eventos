@@ -91,12 +91,12 @@ function adaptive_custom_comment_fields() {
 	
 	$fields = array(
 		'author' => '<p>' . 
-						'<input id="author" name="author" type="text" value="' . esc_attr($commenter['comment_author']) . '" ' . $aria_req . ' />' .
 						'<label for="author">' . __('Nombre', LANG ) . '' . ($req ? __(' (requerido)', LANG ) : '') . '</label>' .
+						'<input id="author" name="author" type="text" value="' . esc_attr($commenter['comment_author']) . '" ' . $aria_req . ' />' .
 		            '</p>',
 		'email' => '<p>' . 
-						'<input id="email" name="email" type="text" value="' . esc_attr($commenter['comment_author_email']) . '" ' . $aria_req . ' />' .
 						'<label for="email">' . __('Email', LANG ) . '' . ($req ? __(' (requerido) (no será publicado )', LANG ) : '') . '</label>' .
+						'<input id="email" name="email" type="text" value="' . esc_attr($commenter['comment_author_email']) . '" ' . $aria_req . ' />' .
 		            '</p>',
 	);
 

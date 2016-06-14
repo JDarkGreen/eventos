@@ -21,17 +21,15 @@
 	<div class="container">
 		<div class="row pageCommon__preview-blog">
 			<!--  Sección Artículo  -->
-			<div class="col-xs-8">
+			<div class="col-xs-12 col-md-8">
 				<article class="item-blog">
 					<!-- Imagen -->
 					<figure class="pageBlog__image-featured">
 						<?= get_the_post_thumbnail( $post->ID ,'full', array('class'=>'img-fluid') ); ?>
-						<!-- Figcaption fecha -->
-						<figcaption class="container-flex align-content text-xs-center text-uppercase"><?= mysql2date('j M', $post->post_date); ?></figcaption>
 					</figure> <!-- /.pageBlog__image-featured -->
 
 					<!-- Titulo -->
-					<h2 class="pageCommon__title text-uppercase"> <?php _e( $post->post_title , LANG ); ?></h2>
+					<h2 class="text-uppercase"> <?php _e( $post->post_title , LANG ); ?></h2>
 
 					<!-- Contenido -->
 					<div class="item-blog__content">
@@ -43,11 +41,17 @@
 						<!-- Titulo --> <h3 class="text-uppercase"><?php _e('comparte esta noticia'  , LANG ); ?></h3>
 						<!-- Compartir --> 
 						<div class="multimedia__item__share">
-							<!-- Facebook -->
-							<a href="javascript:window.open('https://www.facebook.com/sharer/sharer.php?u=<?= get_permalink( $post->ID ); ?>' , '_blank' , 'width=400 , height=500' ); void(0);"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-							<!-- Twitter -->
-							<a href="javascript:window.open('https://twitter.com/intent/tweet?text=<?= '!Hola! este artículo me pareció interesante: ' . get_permalink( $post->ID ) . ' !Visítalo!' ; ?>' , '_blank' , 'width=400 , height=500' ); void(0);"><i class="fa fa-twitter" aria-hidden="true"></i></a>	
-						</div>
+							<ul class="social-links">
+								<!-- Facebook -->
+								<li>
+									<a href="javascript:window.open('https://www.facebook.com/sharer/sharer.php?u=<?= get_permalink( $post->ID ); ?>' , '_blank' , 'width=400 , height=500' ); void(0);"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+								</li>
+								<!-- Twitter -->
+								<li>
+									<a href="javascript:window.open('https://twitter.com/intent/tweet?text=<?= '!Hola! este artículo me pareció interesante: ' . get_permalink( $post->ID ) . ' !Visítalo!' ; ?>' , '_blank' , 'width=400 , height=500' ); void(0);"><i class="fa fa-twitter" aria-hidden="true"></i></a>	
+								</li>
+							</ul> <!-- /.social-links -->
+						</div> <!-- /,.multimedia__item__share -->
 					</section> <!-- /.item-blog__share -->
 
 					<!-- Sección Comentarios -->
@@ -58,8 +62,8 @@
 				</article> <!-- /.article -->
 			</div> <!-- /.col-xs-8 -->
 
-			<!-- Aside Categorías-->
-			<div class="col-xs-4">
+			<!-- Aside Categorías Ocultar en mobile y se encontrará en su lado derecho -->
+			<div class="col-xs-4 hidden-xs-down">
 				<!-- Incluir template categorias -->
 				<?php include( locate_template("partials/sidebar-categories.php" ) ); ?>
 			</div> <!-- /.col-xs-4 -->

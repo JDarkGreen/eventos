@@ -160,7 +160,7 @@ function theme_customize_register($wp_customize) {
 	));
 
 	//Email Gerente Comercial
-	$wp_customize->add_setting('theme_custom_settings[contact_email_gerente]', array(
+	/*$wp_customize->add_setting('theme_custom_settings[contact_email_gerente]', array(
 		'default' => '',
 		'type' => 'option'
 	));
@@ -183,40 +183,28 @@ function theme_customize_register($wp_customize) {
 		'section'  => 'theme_contact_email',
 		'settings' => 'theme_custom_settings[contact_email_admin_doc]',
 		'type'     => 'text'
-	));
+	)); */
 
 	//Customizar celular
 	$wp_customize->add_section('theme_contact_cel', array(
 		'title' => __('Celulares de Contacto', LANG),
-		'description' => __('Escribir los números correspondientes', LANG),
+		'description' => __('Escribir números correspondientes', LANG),
 		'priority' => 39
 	));
 	
-	//RPC
-	$wp_customize->add_setting('theme_custom_settings[contact_cel_rpc]', array(
+	//CEL
+	$wp_customize->add_setting('theme_custom_settings[contact_cel]', array(
 		'default' => '',
 		'type' => 'option'
 	));
 	
-	$wp_customize->add_control('theme_custom_settings[contact_cel_rpc]', array(
-		'label'    => __('Número RPC', LANG),
+	$wp_customize->add_control('theme_custom_settings[contact_cel]', array(
+		'label'    => __('Celular: ', LANG),
 		'section'  => 'theme_contact_cel',
-		'settings' => 'theme_custom_settings[contact_cel_rpc]',
+		'settings' => 'theme_custom_settings[contact_cel]',
 		'type'     => 'text'
 	));	
 
-	//RPM
-	$wp_customize->add_setting('theme_custom_settings[contact_cel_rpm]', array(
-		'default' => '',
-		'type' => 'option'
-	));
-	
-	$wp_customize->add_control('theme_custom_settings[contact_cel_rpm]', array(
-		'label'    => __('Número RPM', LANG),
-		'section'  => 'theme_contact_cel',
-		'settings' => 'theme_custom_settings[contact_cel_rpm]',
-		'type'     => 'text'
-	));
 
 	//Customizar telefono
 	$wp_customize->add_section('theme_contact_tel', array(
@@ -278,31 +266,18 @@ function theme_customize_register($wp_customize) {
 		'priority' => 41
 	));
 	
-	//CentroLima
+	//Ubicación
 	$wp_customize->add_setting('theme_custom_settings[contact_mapa]', array(
 		'default' => '',
 		'type' => 'option'
 	));
 	
 	$wp_customize->add_control('theme_custom_settings[contact_mapa]', array(
-		'label'    => __('CentroLima: Escribe latitud y longitud de mapa sepador por coma', LANG),
+		'label'    => __('Escribe latitud y longitud de mapa separados por coma', LANG),
 		'section'  => 'theme_contact_mapa',
 		'settings' => 'theme_custom_settings[contact_mapa]',
 		'type'     => 'text'
 	));	
-
-	//Surco
-	$wp_customize->add_setting('theme_custom_settings[contact_mapa_surco]', array(
-		'default' => '',
-		'type' => 'option'
-	));
-	
-	$wp_customize->add_control('theme_custom_settings[contact_mapa_surco]', array(
-		'label'    => __('Surco: Escribe latitud y longitud de mapa sepador por coma', LANG),
-		'section'  => 'theme_contact_mapa',
-		'settings' => 'theme_custom_settings[contact_mapa_surco]',
-		'type'     => 'text'
-	));
 
 	//Customizar WIDGET NOSOTROS
 	$wp_customize->add_section('theme_widget_nosotros', array(

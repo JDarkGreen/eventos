@@ -1,9 +1,11 @@
 <?php
 	
 	//Obtenemos las valores enviados
-	$name    = $_POST['nombre'];
 	$from    = $_POST['email'];
 	$message = $_POST['message'];
+	$name    = $_POST['name'];
+	$phone   = $_POST['phone'];
+	$subject = $_POST['subject'];
 
 
 	//Email A quien se le rinde cuentas
@@ -26,9 +28,15 @@
 	$mail->FromName = $name;
 	$mail->AddAddress( $webmaster_email2 );
 
-	$mail->IsHTML(false); // send as HTML
-	$mail->Subject = "Consulta - Mensaje INGENIOART Formulario";
-	$mail->Body    = $message;
+	$mail->IsHTML(true); // send as HTML
+	$mail->Subject = "Consulta - Mensaje EVENTOS GALA Formulario: " . $subject;
+
+	//Customizar el mensaje
+	$mensaje  = "De Sr.(a) " . $name . "<br/>";
+	$mensaje .= $message;
+	$mensaje .= "<br/> Su teléfono es: " . $phone;
+
+	$mail->Body = $mensaje;
 
 	if($mail->Send()){
 		echo "Su mensaje a sido enviado con éxito, estaremos respondiendo a la brevedad."; 
