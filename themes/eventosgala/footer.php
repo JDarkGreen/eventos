@@ -10,7 +10,7 @@
 			<div class="row text-xs-center text-md-left">
 
 				<!-- Logo -->
-				<div class="col-xs-12 col-md-3">
+				<div class="col-xs-12 col-md-4">
 					<h1 class="logo">
 						<a href="<?= site_url() ?>">
 							<?php if( !empty($options['logo']) ) : ?>
@@ -23,6 +23,7 @@
 				</div> <!-- /.col-xs-3 -->
 
 				<!-- Información -->
+				<?php /*
 				<div class="col-xs-12 col-md-3 text-justify">
 					<!-- Extrar la data de la opcion text nosotros -->
 					<?php 
@@ -31,22 +32,27 @@
 							echo apply_filters('the_content' , "Actualizando Contenido." );
 						endif;
 					?>
-				</div> <!-- /.col-xs-3 -->
+				</div> <!-- /.col-xs-3 --> */ ?>
 				
 				<!-- Nuestros Servicios -->
-				<div class="col-xs-12 col-md-3">
+				<div class="col-xs-12 col-md-4">
+					
+					<div class="mainFooter__item">
 					<!-- Título --> <h2 class="pageCommon__section-subtitle"> <?php _e('Nuestros Servicios' , LANG ); ?></h2>
 					<!-- Contenido -->
-					<?php 
-						if( isset($options['widget_footer_service']) && !empty($options['widget_footer_service']) ) :  echo apply_filters('the_content' , $options['widget_footer_service'] );
-						else: 
-							echo apply_filters('the_content' , "Actualizando Contenido." );
-						endif;
-					?>
+					
+						<?php 
+							if( isset($options['widget_footer_service']) && !empty($options['widget_footer_service']) ) :  echo apply_filters('the_content' , $options['widget_footer_service'] );
+							else: 
+								echo apply_filters('the_content' , "Actualizando Contenido." );
+							endif;
+						?>
+					</div> <!-- /. -->
+
 				</div> <!-- /.col-xs-3 -->
 				
 				<!-- Contactos -->
-				<div class="col-xs-12 col-md-3">
+				<div class="col-xs-12 col-md-4">
 					<!-- Título --> <h2 class="pageCommon__section-subtitle"> <?php _e('Contáctanos' , LANG ); ?></h2>
 
 					<!-- Contenido Lista Datos -->
@@ -54,21 +60,30 @@
 
 						<!-- Telefono -->
 						<?php if( isset($options['contact_tel']) && !empty($options['contact_tel']) ) : ?>
-							<li> <!-- Icono --> <i class="fa fa-mobile" aria-hidden="true"></i>
+							<li> <!-- Icono --> 
+								<i>
+									<img src="<?= IMAGES ?>/icon/iconos_contacto_rpm.png" alt="contacto-eventos-gala" class="img-fluid" />
+								</i>
 							<?= $options['contact_tel']; ?>
 							</li>
 						<?php endif; ?>
 
 						<!-- Mensaje -->
 						<?php if( isset($options['contact_email']) && !empty($options['contact_email']) ) : ?>
-							<li> <!-- Icono --> <i class="fa fa-envelope-o" aria-hidden="true"></i>
+							<li> <!-- Icono --> 
+								<i>
+									<img src="<?= IMAGES ?>/icon/iconos_contacto_mail.png" alt="contacto-eventos-gala" class="img-fluid" />
+								</i>
 							<?= $options['contact_email']; ?>
 							</li>
 						<?php endif; ?>
 
 						<!-- Ubicación -->
 						<?php if( isset($options['contact_address']) && !empty($options['contact_address']) ) : ?>
-							<li> <!-- Icono --> <i class="fa fa-map-marker" aria-hidden="true"></i>
+							<li> <!-- Icono --> 
+							<i>
+								<img src="<?= IMAGES ?>/icon/iconos_contacto_direccion.png" alt="contacto-eventos-gala" class="img-fluid" />
+							</i>
 							<?= $options['contact_address']; ?>
 							</li>
 						<?php endif; ?>

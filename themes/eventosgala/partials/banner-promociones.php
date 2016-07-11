@@ -15,7 +15,7 @@
 	?> 
 	<!-- Contenido -->
 	<div class="content-promocion">
-		<!-- Título --> <h2 class=""><?php _e( $promocion->post_title , LANG ); ?></h2>
+		<!-- Título --> <h2 class="sectionCommon__title-section"><?php _e( $promocion->post_title , LANG ); ?></h2>
 		<!-- Botón Ver más  --> <a href="#" class="btnCommon__show-more btnCommon__show-more--small"><?php _e('Ver más' , LANG ); ?></a>
 
 		<!-- Separador Solo en mobile --> <p class="hidden-sm-up"></p>

@@ -151,7 +151,10 @@ figure
 	margin: 0 45px
 	//Título
 	h2
-		color: $gala_morado_oscuro
+		color      : $gala_morado_oscuro
+		font-family: "Great Vibes",cursive
+		font-size  : 45px
+
 	//Subtítulo
 	h3
 		font-size  : 25px 
@@ -174,6 +177,7 @@ figure
 	//Imagen
 	figure 
 		background-repeat: no-repeat
+		background-size  : cover 
 		height           : 160px
 
 /* Título */
@@ -188,6 +192,12 @@ figure
 	padding      : 0 0 15px 80px
 	position     : absolute
 	top          : 50%
+
+/* Título de Secciones */
+.sectionCommon__title-section
+	color      : $gala_morado_oscuro
+	font-family: "Great Vibes",cursive
+	font-size  : 45px	
 
 //+BOTONES
 //++ Botón Ver Más
@@ -430,8 +440,14 @@ figure
 				right     : 0
 				/* Título */
 				h3 
-					font-size: 23px 
-					margin   : 0 
+					font-family: "Great Vibes",cursive
+					font-size  : 40px
+					font-weight: 600
+					margin     : 0
+				/* span */
+				span 
+					font-family: "Arial" , sans-serif
+					font-size  : 28px 
 
 //+ Sección Miscelaneo
 .pageInicio__miscelaneo
@@ -760,6 +776,10 @@ figure
 	p 
 		font-size: 13px
 
+//Item
+.mainFooter__item
+	margin: 0 15%
+
 //Lista de Contactos
 .mainFooter__list-data
 	list-style-type: none
@@ -769,10 +789,11 @@ figure
 		margin   : 0 auto 8px 
 		//Iconos
 		i
+			display       : inline-block
 			margin        : 0 10px 0 -29px
 			text-align    : center 
 			vertical-align: middle
-			width         : 15px
+			width         : 20px
 
 //+Sección de Desarrollador
 .mainFooter__developer
