@@ -6,13 +6,12 @@
 	<section class="pageCommon__banner relative">
 		<!-- Conseguir el banner por defecto -->
 		<?php 
-			$img_banner = get_post_meta($banner->ID, 'input_img_banner_'.$banner->ID , true); 
-			if( empty($img_banner) || $img_banner != -1 ) {
-				$img_banner = "https://placeimg.com/1920/251/any";
-			}
+			$img_banner = get_post_meta( $banner->ID, 'input_img_banner_'.$banner->ID , true);
+
+			$img_banner = !empty( $img_banner ) ? $img_banner : "https://placeimg.com/1920/251/any";
 		?>
-		<figure style='background: url("<?= $img_banner; ?>")'>
-			<img src="<?= $img_banner ?>" alt="banner-nosotros-empresa-pbg" class="img-fluid hidden-xs-down" />
+		<figure style='background-image: url("<?= $img_banner; ?>")'>
+			<!--img src="<?= $img_banner ?>" alt="banner-nosotros-empresa-pbg" class="img-fluid hidden-xs-down" /-->
 		</figure>
 
 		<!-- Título de la pagina posicion absoluta -->
