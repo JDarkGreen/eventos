@@ -38,7 +38,6 @@
 <!-- Header -->
 <header class="mainHeader sb-slide">
 
-
 	<!-- Sección Datos Ocultar en Mobile -->
 	<section class="mainHeader__info hidden-xs-down">
 		<div class="container">

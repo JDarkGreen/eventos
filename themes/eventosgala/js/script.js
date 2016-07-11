@@ -283,13 +283,17 @@ var j = jQuery.noConflict();
 		}
 
 		/* NAVEGACIÓN PRINCIPAL */
-		if( j(".mainNavigation").length ){
+		if( j(".mainHeader").length ){
 			//Si el scroll del navegador es mayor que la posicion de 7 pixeles
 			if( j('body').scrollTop() > 7 ){
 				//
+				j(".mainHeader").addClass('mainHeader--fixed');
 				j(".mainNavigation").addClass('mainNavigation--fixed');
+
 			}else{ 
-				/* Si no  */ j(".mainNavigation").removeClass('mainNavigation--fixed');
+				/* Si no  */ 
+				j(".mainHeader").removeClass('mainHeader--fixed');
+				j(".mainNavigation").removeClass('mainNavigation--fixed');
 			}
 
 		}
